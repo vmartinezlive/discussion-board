@@ -1,7 +1,9 @@
 import React from 'react';
+import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 
-function Form(){
+function Form(props){
   let _postTitle = null;
   let _postText = null;
 
@@ -9,6 +11,7 @@ function Form(){
     e.preventDefault();
     console.log(_postTitle.value);
     console.log(_postText.value);
+    props.onAddNewPost({title: _postTitle.value, text: _postText.value, likes: 0, dislikes: 0, id: v4()});
   }
 
   return(
@@ -25,5 +28,8 @@ function Form(){
 
   );
 }
+Form.propTypes = {
+  onAddNewPost: PropTypes.func
+};
 
 export default Form;
