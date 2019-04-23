@@ -25,6 +25,8 @@ class App extends React.Component {
     };
     this.handleAddNewPost = this.handleAddNewPost.bind(this);
     this.handleToggleViewForm = this.handleToggleViewForm.bind(this);
+    this.handleUpvote = this.handleUpvote.bind(this);
+    this.handleDownvote = this.handleDownvote.bind(this);
   }
 
   //Defines a function to add a new post to the masterList. We need to pass it down to the Form.
@@ -40,13 +42,34 @@ class App extends React.Component {
     console.log(this.state.formVisible);
   }
 
+  handleUpvote(id) {
+    this.state.masterListOfPosts.forEach((post,index)=>{
+      if (post.id === id) {
+        this.setState({likes: this.state.masterListOfPosts[index].likes++});
+      }
+    });
+  }
+
+  handleDownvote(id) {
+    this.state.masterListOfPosts.forEach((post,index)=>{
+      if (post.id === id) {
+        this.setState({likes: this.state.masterListOfPosts[index].likes--});
+      }
+    });
+  }
+
   // passing handleAddNewPost to the <Form> component as a prop. Renamed onAddNewPost
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisible) {
-      currentlyVisibleContent = <Form onAddNewPost={this.handleAddNewPost} onToggleViewForm={this.handleToggleViewForm}/>;
+      currentlyVisibleContent = <Form
+        onAddNewPost={this.handleAddNewPost}
+        onToggleViewForm={this.handleToggleViewForm}/>;
     } else {
-      currentlyVisibleContent = <PostContainer childListOfPosts={this.state.masterListOfPosts} />;
+      currentlyVisibleContent = <PostContainer
+        childListOfPosts={this.state.masterListOfPosts}
+        onUpvote={this.handleUpvote}
+        onDownvote={this.handleDownvote}/>;
     }
     return(
       <div>

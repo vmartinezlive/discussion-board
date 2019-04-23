@@ -13,6 +13,8 @@ function PostContainer(props) {
           text={post.text}
           likes={post.likes}
           id={post.id}
+          onUpvote={props.onUpvote}
+          onDownvote={props.onDownvote}
           key={post.id}/>
       )}
     </div>
@@ -21,7 +23,9 @@ function PostContainer(props) {
 }
 
 PostContainer.propTypes = {
-  childListOfPosts: PropTypes.array
+  childListOfPosts: PropTypes.array,
+  onUpvote: PropTypes.func,
+  onDownvote: PropTypes.func
 };
 
 export default PostContainer;
