@@ -11,7 +11,8 @@ function Form(props){
     e.preventDefault();
     console.log(_postTitle.value);
     console.log(_postText.value);
-    props.onAddNewPost({title: _postTitle.value, text: _postText.value, likes: 0, dislikes: 0, id: v4()});
+    props.onAddNewPost({title: _postTitle.value, text: _postText.value, likes: 0, id: v4()});
+    props.onToggleViewForm();
   }
 
   return(
@@ -21,7 +22,7 @@ function Form(props){
         <input type="text" ref={(input)=>{_postTitle=input;}}/>
         <p>Text:</p>
         <input type="text" ref={(input)=>{_postText=input;}}/>
-        <button type="submit">Submit</button>
+        <button type="submit" >Submit</button>
 
       </form>
     </div>
@@ -29,7 +30,8 @@ function Form(props){
   );
 }
 Form.propTypes = {
-  onAddNewPost: PropTypes.func
+  onAddNewPost: PropTypes.func,
+  onToggleViewForm: PropTypes.func
 };
 
 export default Form;

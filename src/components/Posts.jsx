@@ -8,7 +8,6 @@ function Posts(props) {
       <h3>{props.title}</h3>
       <p>{props.text}</p>
       <p>likes:{props.likes}</p>
-      <p>dislikes:{props.dislikes}</p>
     </div>
   );
 }
@@ -16,7 +15,6 @@ function Posts(props) {
 Posts.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  likes: PropTypes.number.isRequired,
-  dislikes: PropTypes.number.isRequired
+  likes: PropTypes.number.isRequired
 };
 export default Posts;

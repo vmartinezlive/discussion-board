@@ -12,7 +12,6 @@ function PostContainer(props) {
         <Posts title={post.title}
           text={post.text}
           likes={post.likes}
-          dislikes={post.dislikes}
           id={post.id}
           key={post.id}/>
       )}
