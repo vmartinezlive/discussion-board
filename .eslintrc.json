@@ -15,6 +15,7 @@
         "react"
     ],
     "rules": {
+    "no-console": "off",
     "react/no-direct-mutation-state": 2,
     "react/jsx-handler-names": 2,
     "react/prefer-stateless-function": 2,

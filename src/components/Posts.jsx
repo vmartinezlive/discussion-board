@@ -15,7 +15,7 @@ function Posts(props) {
 
 Posts.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequited,
+  text: PropTypes.string.isRequired,
   likes: PropTypes.number.isRequired,
   dislikes: PropTypes.number.isRequired
 };
