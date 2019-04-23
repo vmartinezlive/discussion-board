@@ -43,19 +43,23 @@ class App extends React.Component {
   }
 
   handleUpvote(id) {
-    this.state.masterListOfPosts.forEach((post,index)=>{
+    let newListOfPosts = this.state.masterListOfPosts.slice();
+    newListOfPosts.forEach((post)=>{
       if (post.id === id) {
-        this.setState({likes: this.state.masterListOfPosts[index].likes++});
+        post.likes++;
       }
     });
+    this.setState({masterListOfPosts: newListOfPosts});
   }
 
   handleDownvote(id) {
-    this.state.masterListOfPosts.forEach((post,index)=>{
+    let newListOfPosts = this.state.masterListOfPosts.slice();
+    newListOfPosts.forEach((post)=>{
       if (post.id === id) {
-        this.setState({likes: this.state.masterListOfPosts[index].likes--});
+        post.likes--;
       }
     });
+    this.setState({masterListOfPosts: newListOfPosts});
   }
 
   // passing handleAddNewPost to the <Form> component as a prop. Renamed onAddNewPost
