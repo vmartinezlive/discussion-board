@@ -2,6 +2,7 @@ import React from 'react';
 import PostContainer from './PostContainer';
 import Form from './Form';
 import { v4 } from 'uuid';
+import { clipart } from './ladies.jpg';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,7 +40,6 @@ class App extends React.Component {
 
   handleToggleViewForm(){
     this.setState({formVisible: !this.state.formVisible});
-    console.log(this.state.formVisible);
   }
 
   handleUpvote(id) {
@@ -77,6 +77,18 @@ class App extends React.Component {
     }
     return(
       <div>
+        <style jsx>{`
+              img{
+                width: 60vw;
+                height: 50vh;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+              }
+
+                `}</style>
+              <img src={require( './ladies.jpg')}/>
         <button type="button" onClick={this.handleToggleViewForm}>Make New Post</button>
         {currentlyVisibleContent}
       </div>

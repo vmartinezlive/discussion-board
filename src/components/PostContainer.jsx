@@ -7,7 +7,15 @@ function PostContainer(props) {
 
   return(
     <div>
-      <h1>Post One</h1>
+      <style jsx>{`
+        background-color: #FFF9E9;
+        margin-top: none;
+        h1{
+          font-family: 'Yeseva One', cursive;
+        }
+
+      `}</style>
+    <h1>Neighborhood Chat</h1>
       {props.childListOfPosts.map((post) =>
         <Posts title={post.title}
           text={post.text}
