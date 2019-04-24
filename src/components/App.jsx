@@ -11,13 +11,13 @@ class App extends React.Component {
       formVisible: false,
       masterListOfPosts: [
         {
-          title: 'Something interesting',
+          title: 'Something Interesting',
           text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           likes: 23,
           id: v4()
         },
         {
-          title: 'Something controversial',
+          title: 'Something Controversial',
           text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           likes: 12,
           id: v4()
@@ -86,10 +86,16 @@ class App extends React.Component {
                 margin-right: auto;
                 width: 50%;
               }
-
+              button{
+                background-color: #FF9E92;
+                padding: 10px 10px 10px 10px;
+                text-transform: uppercase;
+              }
+              font-family: 'Fresca', sans-serif;
+              text-align: center;
                 `}</style>
               <img src={require( './ladies.jpg')}/>
-        <button type="button" onClick={this.handleToggleViewForm}>Make New Post</button>
+        <button type="button" onClick={this.handleToggleViewForm}>Post Something</button>
         {currentlyVisibleContent}
       </div>
     );

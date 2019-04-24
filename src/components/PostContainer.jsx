@@ -11,11 +11,14 @@ function PostContainer(props) {
         background-color: #FFF9E9;
         margin-top: none;
         h1{
-          font-family: 'Yeseva One', cursive;
+          font-family: 'Schoolbell', cursive;
+          font-size: 5rem;
+          text-align: center;
         }
 
+
       `}</style>
-    <h1>Neighborhood Chat</h1>
+    <h1>Girl Chat</h1>
       {props.childListOfPosts.map((post) =>
         <Posts title={post.title}
           text={post.text}
